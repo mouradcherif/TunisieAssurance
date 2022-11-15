@@ -2,8 +2,9 @@ package com.cherif.tunisieassurance;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.motion.widget.MotionLayout;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionCompleted(MotionLayout motionLayout, int currentId) {
-
+                Intent intent = new  Intent(getBaseContext(), IntroActivity.class);
+                startActivity(intent);
             }
 
             @Override

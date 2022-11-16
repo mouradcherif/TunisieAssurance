@@ -24,7 +24,7 @@ public class IntroActivity extends AppIntro {
     @Override
     protected void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
-        Intent intent = new  Intent(getBaseContext(), MenuActivity.class);
+        Intent intent = new  Intent(getBaseContext(), LoginActivity.class);
         startActivity(intent);
     }
 

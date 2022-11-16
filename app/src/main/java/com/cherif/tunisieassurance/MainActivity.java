@@ -3,6 +3,7 @@ package com.cherif.tunisieassurance;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.motion.widget.MotionLayout;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 
@@ -13,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MotionLayout motion_layout = findViewById(R.id.motion_layout);
+        SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        String FirstTime = preferences.getString("FirstTimeOpen","");
+
         motion_layout.setTransitionListener(new MotionLayout.TransitionListener() {
             @Override
             public void onTransitionStarted(MotionLayout motionLayout, int startId, int endId) {
@@ -26,8 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionCompleted(MotionLayout motionLayout, int currentId) {
-                Intent intent = new  Intent(getBaseContext(), IntroActivity.class);
-                startActivity(intent);
+                if (FirstTime.equals("Yes")) {
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("FirstTimeOpen","No");
+                    editor.apply();
+                    Intent intent = new  Intent(getBaseContext(), IntroActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new  Intent(getBaseContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+
+
             }
 
             @Override

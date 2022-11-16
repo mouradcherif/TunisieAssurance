@@ -39,6 +39,9 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.Material3.Dark.NoActionBar"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar"></activity>
     </application>
 
 </manifest>

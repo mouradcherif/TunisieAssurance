@@ -5,7 +5,6 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
 

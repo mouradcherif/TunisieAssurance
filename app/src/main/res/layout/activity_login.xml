@@ -99,6 +99,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/btnlogin"
             android:onClick="Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,6 +133,7 @@
             android:textSize="10.5sp" />
 
         <TextView
+            android:id="@+id/btnregister"
             android:onClick="Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

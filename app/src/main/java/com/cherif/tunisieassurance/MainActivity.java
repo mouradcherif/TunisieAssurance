@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MotionLayout motion_layout = findViewById(R.id.motion_layout);
-        SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String FirstTime = preferences.getString("FirstTimeOpen","");
+
 
         motion_layout.setTransitionListener(new MotionLayout.TransitionListener() {
             @Override
@@ -30,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionCompleted(MotionLayout motionLayout, int currentId) {
-                if (FirstTime.equals("Yes")) {
+                SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+                String FirstTime = preferences.getString("FirstTimeOpen","");
+                if (FirstTime.equals("")) {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("FirstTimeOpen","No");
                     editor.apply();

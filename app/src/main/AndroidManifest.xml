@@ -13,8 +13,25 @@
         android:theme="@style/Theme.TunisieAssurance"
         tools:targetApi="31">
         <activity
+            android:name=".ContractActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ClientActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MenuActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -35,13 +52,13 @@
         </activity>
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/Theme.Material3.Dark.NoActionBar"></activity>
+            android:theme="@style/Theme.Material3.Dark.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.Material3.Dark.NoActionBar"></activity>
+            android:theme="@style/Theme.Material3.Dark.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.Material3.Dark.NoActionBar"></activity>
+            android:theme="@style/Theme.Material3.Dark.NoActionBar" />
     </application>
 
 </manifest>

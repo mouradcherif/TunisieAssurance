@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="indigo_dye_blue">#FF184074</color>
-    <color name="turquoise">#FF30D5C8</color>
+    <color name="turquoise">#FF30D5C8</color>#7B9FCDff
     <color name="gris">#FF696969</color>
+    <color name="blue_little_boy">#ff7B9FCD</color>
+
 </resources>

@@ -7,212 +7,213 @@
     tools:context=".MenuActivity"
     android:orientation="vertical">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+
+        <RelativeLayout
+            android:id="@+id/topArea"
+            android:layout_width="421dp"
+            android:layout_height="902dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="92dp"
+            android:background="@drawable/backgroundwhite">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="163dp"
+                android:layout_height="168dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="12dp"
+                app:srcCompat="@drawable/profileimage" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="51dp"
+                android:text="Hello"
+                android:textColor="@color/indigo_dye_blue"
+                android:textSize="53sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-19dp"
+                android:text="Administrator"
+                android:textColor="@color/blue_little_boy"
+                android:textSize="53dp" />
 
             <RelativeLayout
-                android:id="@+id/topArea"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/indigo_dye_blue"
-                >
+                android:layout_width="374dp"
+                android:layout_height="86dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="23dp"
+                android:layout_marginBottom="326dp"
+                android:background="@drawable/bluebar"
+                android:onClick="GoClients">
 
+
+                <TextView
+                    android:id="@+id/clients"
+                    android:layout_width="271dp"
+                    android:layout_height="67dp"
+                    android:layout_below="@+id/textView2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="99dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="-3dp"
+                    android:text="Clients"
+                    android:textColor="@color/blue_little_boy"
+                    android:textSize="30sp" />
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="39dp"
-                    android:layout_marginTop="77dp"
+                    android:id="@+id/icon"
+                    android:layout_width="92dp"
+                    android:layout_height="76dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginBottom="390dp"
+                    android:src="@drawable/clients" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="78dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@id/myDashboard"
-                    android:src="@drawable/avatar" />
-
-                <TextView
-                    android:id="@+id/myDashboard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginTop="77dp"
-                    android:text="My Dashboard"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/dashboard_adminName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/myDashboard"
-                    android:layout_alignEnd="@id/myDashboard"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:text="Admin "
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:layout_marginBottom="12dp"
+                    app:srcCompat="@drawable/buttons" />
 
             </RelativeLayout>
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="50dp"
-                android:columnCount="2"
-                android:padding="5dp">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/driverManager"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="7dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="2dp"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:src="@drawable/clients"
-                            android:layout_gravity="center_horizontal|center_vertical"></ImageView>
+            <RelativeLayout
+                android:layout_width="374dp"
+                android:layout_height="86dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="421dp"
+                android:background="@drawable/bluebar"
+                android:onClick="GoContracts">
 
 
+                <TextView
+                    android:id="@+id/contracts"
+                    android:layout_width="275dp"
+                    android:layout_height="73dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Contracts"
+                    android:textColor="@color/blue_little_boy"
+                    android:textSize="30sp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="Clients"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="92dp"
+                    android:layout_height="76dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="390dp"
+                    android:src="@drawable/contract" />
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="78dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="12dp"
+                    app:srcCompat="@drawable/buttons" />
+            </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/parkingManager"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="7dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="2dp"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:src="@drawable/contract"
-                            android:layout_gravity="center_horizontal|center_vertical"/>
-
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="Contracts"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="374dp"
+                android:layout_height="86dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="232dp"
+                android:background="@drawable/bluebar"
+                android:onClick="GoGithub">
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/support"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="7dp">
+                <TextView
+                    android:id="@+id/share"
+                    android:layout_width="273dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Github"
+                    android:textColor="@color/blue_little_boy"
+                    android:textSize="30sp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="2dp"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="92dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="380dp"
+                    android:src="@drawable/github" />
 
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:src="@drawable/share"
-                            android:layout_gravity="center_horizontal|center_vertical"></ImageView>
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="78dp"
+                    android:layout_height="62dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="12dp"
+                    app:srcCompat="@drawable/buttons" />
+            </RelativeLayout>
 
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="155dp"
+                android:layout_height="68dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="124dp"
+                android:background="@drawable/signout"
+                android:onClick="GoSignIn"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="Share"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/logout"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="7dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="2dp"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:src="@drawable/logout"
-
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="Logout"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
 
-            </GridLayout>
+    </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
+
+
+
+
+
+
+
+
 
 
 </LinearLayout>

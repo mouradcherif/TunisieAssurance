@@ -59,6 +59,10 @@
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/Theme.Material3.Dark.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

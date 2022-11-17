@@ -41,6 +41,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="51dp"
+                android:fontFamily="@font/bahnschrift"
                 android:text="Hello"
                 android:textColor="@color/indigo_dye_blue"
                 android:textSize="53sp"
@@ -54,6 +55,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="-19dp"
+                android:fontFamily="@font/bahnschrift"
                 android:text="Administrator"
                 android:textColor="@color/blue_little_boy"
                 android:textSize="53dp" />
@@ -79,6 +81,7 @@
                     android:layout_marginStart="99dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="-3dp"
+                    android:fontFamily="@font/bahnschrift"
                     android:text="Clients"
                     android:textColor="@color/blue_little_boy"
                     android:textSize="30sp" />
@@ -122,6 +125,7 @@
                     android:layout_marginStart="100dp"
                     android:layout_marginTop="21dp"
                     android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/bahnschrift"
                     android:text="Contracts"
                     android:textColor="@color/blue_little_boy"
                     android:textSize="30sp" />
@@ -165,6 +169,7 @@
                     android:layout_marginStart="100dp"
                     android:layout_marginTop="21dp"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/bahnschrift"
                     android:text="Github"
                     android:textColor="@color/blue_little_boy"
                     android:textSize="30sp" />

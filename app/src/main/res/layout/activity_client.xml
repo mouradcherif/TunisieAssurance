@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientActivity">
+    tools:context=".ClientActivity"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundcontact">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/topArea"
+            android:layout_width="339dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="62dp">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="188dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="131dp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Clients"
+                android:textColor="@color/indigo_dye_blue"
+                android:textSize="150px"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="36.7dp"
+            android:layout_marginRight="62dp"
+            android:background="@drawable/grey_border_rounded_cornwe">
+
+            <EditText
+                android:id="@+id/username_input"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Search..."
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/gris"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/username_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="200dp"
+                android:src="@drawable/icon_search" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

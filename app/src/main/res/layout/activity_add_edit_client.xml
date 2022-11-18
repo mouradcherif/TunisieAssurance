@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEditClient"
+    android:background="@drawable/backgroundwhite">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="129dp"
+        android:background="@color/indigo_dye_blue">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/_10sdp">
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/defaultprofilepic"
+            app:civ_border_color="@color/appintro_ripple_color"
+            app:civ_border_width="@dimen/_1sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Name"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/nameEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_10sdp"
+                app:backgroundTint="@color/gris"
+                android:textColorHint="@color/black"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_10sdp"
+                app:backgroundTint="@color/gris"
+                android:textColorHint="@color/black"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Location"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/locationEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                app:backgroundTint="@color/gris"
+                android:textColorHint="@color/black"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Phone number"
+                android:inputType="phone"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/phoneEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_10sdp"
+                app:backgroundTint="@color/gris"
+                android:textColorHint="@color/black"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/editinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bluebar"
+                android:fadeScrollbars="false"
+                android:onClick="GoContracts"
+                android:overScrollMode="always"
+                android:paddingTop="15dp"></androidx.appcompat.widget.AppCompatImageButton>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/bahnschrift"
+                android:paddingLeft="@dimen/_98sdp"
+                android:paddingTop="@dimen/_13sdp"
+                android:text="Edit Client"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"></TextView>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>

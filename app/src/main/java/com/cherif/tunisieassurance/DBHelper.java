@@ -5,9 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.SimpleCursorAdapter;
 
 
-    public class DBHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
         public static final String DBNAME = "TunisieAsssurance.db";
         public DBHelper(Context context) {
             super(context, "TunisieAsssurance.db", null, 1);
@@ -16,6 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         @Override
         public void onCreate(SQLiteDatabase MyDB) {
             MyDB.execSQL("create Table users(email TEXT primary key, password TEXT)");
+            MyDB.execSQL("create Table clients(Personid integer primary key AUTOINCREMENT,name TEXT, region TEXT );");
         }
 
         @Override
@@ -51,4 +53,6 @@ import android.database.sqlite.SQLiteOpenHelper;
             else
                 return false;
         }
+
+
     }

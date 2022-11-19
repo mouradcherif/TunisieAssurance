@@ -15,196 +15,207 @@
 
         <RelativeLayout
             android:id="@+id/topArea"
-            android:layout_width="421dp"
-            android:layout_height="902dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="92dp"
             android:background="@drawable/backgroundwhite">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="163dp"
                 android:layout_height="168dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="130dp"
-                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/centerinfo"
                 app:srcCompat="@drawable/profileimage" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/centerinfo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="51dp"
-                android:fontFamily="@font/bahnschrift"
-                android:text="Hello"
-                android:textColor="@color/indigo_dye_blue"
-                android:textSize="53sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="-19dp"
-                android:fontFamily="@font/bahnschrift"
-                android:text="Administrator"
-                android:textColor="@color/blue_little_boy"
-                android:textSize="53dp" />
-
-            <RelativeLayout
-                android:layout_width="374dp"
-                android:layout_height="86dp"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="23dp"
-                android:layout_marginBottom="326dp"
-                android:background="@drawable/bluebar"
-                android:onClick="GoClients">
 
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/clients"
-                    android:layout_width="271dp"
-                    android:layout_height="67dp"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bahnschrift"
+                    android:text="Hello"
+                    android:textColor="@color/indigo_dye_blue"
+                    android:textSize="53sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-19dp"
+                    android:fontFamily="@font/bahnschrift"
+                    android:text="Administrator"
+                    android:textColor="@color/blue_little_boy"
+                    android:textSize="53dp" />
+
+                <RelativeLayout
+                    android:id="@+id/contracts"
+                    android:layout_width="374dp"
+                    android:layout_height="86dp"
+                    android:layout_above="@id/clients"
                     android:layout_below="@+id/textView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bluebar"
+                    android:onClick="GoContracts">
+
+
+                    <TextView
+                        android:id="@+id/contracts"
+                        android:layout_width="275dp"
+                        android:layout_height="73dp"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/bahnschrift"
+                        android:text="Contracts"
+                        android:textColor="@color/blue_little_boy"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="92dp"
+                        android:layout_height="76dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="390dp"
+                        android:src="@drawable/contract" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="78dp"
+                        android:layout_height="62dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="12dp"
+                        app:srcCompat="@drawable/buttons" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="374dp"
+                    android:layout_height="86dp"
+                    android:layout_above="@id/github"
+                    android:layout_below="@+id/contracts"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bluebar"
+                    android:onClick="GoClients">
+
+
+                    <TextView
+                        android:id="@+id/clients"
+                        android:layout_width="271dp"
+                        android:layout_height="67dp"
+                        android:layout_below="@+id/textView2"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="99dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-3dp"
+                        android:fontFamily="@font/bahnschrift"
+                        android:text="Clients"
+                        android:textColor="@color/blue_little_boy"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="92dp"
+                        android:layout_height="76dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginBottom="390dp"
+                        android:src="@drawable/clients" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="78dp"
+                        android:layout_height="62dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="12dp"
+                        app:srcCompat="@drawable/buttons" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/github"
+                    android:layout_width="374dp"
+                    android:layout_height="86dp"
+                    android:layout_above="@id/signout"
+                    android:layout_below="@id/clients"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bluebar"
+                    android:onClick="GoGithub">
+
+
+                    <TextView
+                        android:id="@+id/share"
+                        android:layout_width="273dp"
+                        android:layout_height="62dp"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/bahnschrift"
+                        android:text="Github"
+                        android:textColor="@color/blue_little_boy"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="92dp"
+                        android:layout_height="72dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="380dp"
+                        android:src="@drawable/github" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="78dp"
+                        android:layout_height="62dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="12dp"
+                        app:srcCompat="@drawable/buttons" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/signout"
+                    android:layout_width="155dp"
+                    android:layout_height="68dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="99dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="-3dp"
-                    android:fontFamily="@font/bahnschrift"
-                    android:text="Clients"
-                    android:textColor="@color/blue_little_boy"
-                    android:textSize="30sp" />
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="92dp"
-                    android:layout_height="76dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginBottom="390dp"
-                    android:src="@drawable/clients" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="78dp"
-                    android:layout_height="62dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="12dp"
-                    app:srcCompat="@drawable/buttons" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="374dp"
-                android:layout_height="86dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="421dp"
-                android:background="@drawable/bluebar"
-                android:onClick="GoContracts">
-
-
-                <TextView
-                    android:id="@+id/contracts"
-                    android:layout_width="275dp"
-                    android:layout_height="73dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="21dp"
-                    android:layout_marginBottom="3dp"
-                    android:fontFamily="@font/bahnschrift"
-                    android:text="Contracts"
-                    android:textColor="@color/blue_little_boy"
-                    android:textSize="30sp" />
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="92dp"
-                    android:layout_height="76dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="390dp"
-                    android:src="@drawable/contract" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="78dp"
-                    android:layout_height="62dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="12dp"
-                    app:srcCompat="@drawable/buttons" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="374dp"
-                android:layout_height="86dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="33dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="232dp"
-                android:background="@drawable/bluebar"
-                android:onClick="GoGithub">
-
-
-                <TextView
-                    android:id="@+id/share"
-                    android:layout_width="273dp"
-                    android:layout_height="62dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="21dp"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/bahnschrift"
-                    android:text="Github"
-                    android:textColor="@color/blue_little_boy"
-                    android:textSize="30sp" />
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="92dp"
-                    android:layout_height="72dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="380dp"
-                    android:src="@drawable/github" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="78dp"
-                    android:layout_height="62dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="12dp"
-                    app:srcCompat="@drawable/buttons" />
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="155dp"
-                android:layout_height="68dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="22dp"
-                android:layout_marginBottom="124dp"
-                android:background="@drawable/signout"
-                android:onClick="GoSignIn"
-                tools:ignore="SpeakableTextPresentCheck" />
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/signout"
+                    android:onClick="GoSignIn"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
 
         </RelativeLayout>
 

@@ -17,13 +17,29 @@ public class DBHelper extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase MyDB) {
             MyDB.execSQL("create Table users(email TEXT primary key, password TEXT)");
-            MyDB.execSQL("create Table clients(Personid integer primary key AUTOINCREMENT,name TEXT,emailC TEXT  ,region TEXT , phone NUMBER );");
+            MyDB.execSQL("create Table clients(idC integer primary key AUTOINCREMENT,imageC TEXT,nameC TEXT,emailC TEXT  ,regionC TEXT , phoneC NUMBER );");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
             MyDB.execSQL("drop Table if exists users");
+            MyDB.execSQL("drop Table if exists clients");
         }
+
+
+    public Boolean insertDataClient(String imageC, String nameC, String emailC, String regionC, String phoneC){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("imageC", imageC);
+        contentValues.put("nameC", nameC);
+        contentValues.put("emailC", emailC);
+        contentValues.put("regionC", regionC);
+        contentValues.put("phoneC", phoneC);
+        long result = MyDB.insert("clients", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
 
         public Boolean insertData(String email, String password){
             SQLiteDatabase MyDB = this.getWritableDatabase();

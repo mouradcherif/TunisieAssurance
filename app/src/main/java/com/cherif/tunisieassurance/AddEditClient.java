@@ -79,20 +79,13 @@ public class AddEditClient extends AppCompatActivity {
     }
 
     private void showImagePickerDialog() {
-        String options[] = {"Camera","Gallery"};
+        String options[] = {"Gallery"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choose an option");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 if (which == 0){
-                    if (!checkCameraPermission()){
-                        requestCameraPermission();
-                    }else{
-                        pickFromCamera();
-                    }
-
-                }else if (which == 1){
                     if (!checkStoragePermission()){
                         requestStoragePermission();
                     }else {
@@ -203,6 +196,7 @@ public class AddEditClient extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK){
+            imageUri = data.getData();
             profileImage.setImageURI(imageUri);
         }
     }

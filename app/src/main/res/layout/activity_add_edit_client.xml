@@ -144,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:padding="@dimen/_10sdp"
                 android:textColorHint="@color/black"
                 app:backgroundTint="@color/gris"></EditText>

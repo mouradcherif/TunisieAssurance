@@ -156,15 +156,15 @@
             android:layout_gravity="center"
             android:layout_height="@dimen/_45sdp">
 
-            <androidx.appcompat.widget.AppCompatImageButton
+            <TextView
+                android:onClick="AddEditClient"
                 android:id="@+id/editinfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bluebar"
                 android:fadeScrollbars="false"
-                android:onClick="GoContracts"
                 android:overScrollMode="always"
-                android:paddingTop="15dp"></androidx.appcompat.widget.AppCompatImageButton>
+                android:paddingTop="15dp"/>
 
             <TextView
                 android:layout_width="match_parent"

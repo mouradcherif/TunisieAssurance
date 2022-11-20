@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,8 +30,6 @@ public class AddEditClient extends AppCompatActivity {
 
     private ImageView profileImage;
     private EditText nameEt,phoneEt,emailEt,regionEt;
-    private AppCompatImageButton fab;
-    String name,phone,email,region;
     ActionBar actionBar;
     private static final int CAMERA_PERMISSION_CODE = 100;
     private static final int STORAGE_PERMISSION_CODE = 200;
@@ -39,6 +38,8 @@ public class AddEditClient extends AppCompatActivity {
     private String[] cameraPermission;
     private String[] storagePermission;
     Uri imageUri;
+    DBHelper db;
+    String image;
 
 
 
@@ -46,29 +47,23 @@ public class AddEditClient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_client);
+        db=new DBHelper(this);
 
         cameraPermission = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-
         actionBar = getSupportActionBar();
-
         actionBar.setTitle("Add Contact");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
-
+        nameEt = (EditText) findViewById(R.id.nameEt);
+        phoneEt = (EditText) findViewById(R.id.phoneEt);
+        emailEt = (EditText) findViewById(R.id.emailEt);
+        regionEt = (EditText) findViewById(R.id.locationEt);
         profileImage = findViewById(R.id.profile_image);
-        nameEt = findViewById(R.id.nameEt);
-        phoneEt = findViewById(R.id.phoneEt);
-        emailEt = findViewById(R.id.emailEt);
-        regionEt = findViewById(R.id.locationEt);
-        fab = findViewById(R.id.editinfo);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-            }
-        });
+
+
+
 
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,22 +111,9 @@ public class AddEditClient extends AppCompatActivity {
         startActivityForResult(cameraIntent,IMAGE_FROM_CAMERA_CODE);
     }
 
-    private void saveData() {
 
-        name = nameEt.getText().toString();
-        email = emailEt.getText().toString();
-        region = regionEt.getText().toString();
-        phone = phoneEt.getText().toString();
 
-        if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || region.isEmpty()){
 
-            Toast.makeText(getApplicationContext(),"Please fill all fields", Toast.LENGTH_SHORT).show();
-
-        }else {
-
-        }
-
-    }
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -198,6 +180,31 @@ public class AddEditClient extends AppCompatActivity {
         if (resultCode == RESULT_OK){
             imageUri = data.getData();
             profileImage.setImageURI(imageUri);
+            image = imageUri.toString();
+
         }
+    }
+
+    @SuppressLint("NotConstructor")
+    public void AddEditClient(View view) {
+        String nameC = nameEt.getText().toString();
+        String phoneC = phoneEt.getText().toString();
+        String emailC = emailEt.getText().toString();
+        String regionC = regionEt.getText().toString();
+
+        if (nameEt.equals("")||emailEt.equals(""))
+            Toast.makeText(AddEditClient.this, "Please enter all field information!",Toast.LENGTH_SHORT).show();
+        else {
+            Boolean insert = db.insertDataClient(image, nameC, phoneC, emailC, regionC);
+            if (insert){
+                Toast.makeText(AddEditClient.this,"Client Registered successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new  Intent(getBaseContext(), ClientActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(AddEditClient.this,"Client Registration Failed", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }

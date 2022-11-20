@@ -17,25 +17,26 @@ public class DBHelper extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase MyDB) {
             MyDB.execSQL("create Table users(email TEXT primary key, password TEXT)");
-            MyDB.execSQL("create Table clients(idC integer primary key AUTOINCREMENT,imageC TEXT,nameC TEXT,emailC TEXT  ,regionC TEXT , phoneC NUMBER );");
+            MyDB.execSQL("create Table clients(idC integer primary key AUTOINCREMENT,imageC TEXT,nameC TEXT,phoneC TEXT ,emailC TEXT ,regionC TEXT);");
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
+
             MyDB.execSQL("drop Table if exists users");
             MyDB.execSQL("drop Table if exists clients");
         }
 
 
-    public Boolean insertDataClient(String imageC, String nameC, String emailC, String regionC, String phoneC){
+    public Boolean insertDataClient(String imageC, String nameC,String phoneC,String emailC, String regionC){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        ContentValues contentValues= new ContentValues();
-        contentValues.put("imageC", imageC);
-        contentValues.put("nameC", nameC);
-        contentValues.put("emailC", emailC);
-        contentValues.put("regionC", regionC);
-        contentValues.put("phoneC", phoneC);
-        long result = MyDB.insert("clients", null, contentValues);
+        ContentValues contentValues1= new ContentValues();
+        contentValues1.put("imageC", imageC);
+        contentValues1.put("nameC", nameC);
+        contentValues1.put("emailC", emailC);
+        contentValues1.put("regionC", regionC);
+        contentValues1.put("phoneC", phoneC);
+        long result = MyDB.insert("clients", null, contentValues1);
         if(result==-1) return false;
         else
             return true;

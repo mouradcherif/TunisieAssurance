@@ -17,9 +17,8 @@
             android:id="@+id/topArea"
             android:layout_width="351dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
             android:overScrollMode="always">
 
             <TextView
@@ -29,8 +28,6 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
                 android:layout_marginEnd="131dp"
                 android:fontFamily="@font/bahnschrift"
                 android:text="Clients"
@@ -53,11 +50,12 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/search_bar"
             android:layout_width="360dp"
             android:layout_height="55dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginRight="62dp"
+            android:layout_below="@id/topArea"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:background="@drawable/grey_border_rounded_cornwe"
             android:overScrollMode="always">
 
@@ -65,16 +63,15 @@
                 android:id="@+id/username_input"
                 android:layout_width="316dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="Search..."
                 android:inputType="textPersonName"
                 android:maxLines="1"
+                android:minHeight="48dp"
                 android:paddingLeft="20dp"
-                android:paddingTop="15dp"
 
+                android:paddingTop="15dp"
                 android:textColor="@color/gris"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="17sp" />
@@ -84,19 +81,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="37dp"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="200dp"
+                android:layout_toLeftOf="@id/username_input"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="6dp"
                 android:src="@drawable/icon_search" />
 
         </RelativeLayout>
 
-        <ListView
-            android:layout_width="366dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lvcontact"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:id="@+id/lvcontact"></ListView>
+            android:layout_below="@id/search_bar"
+            android:layout_gravity="center"
+            android:background="#00ffffff"
+            android:backgroundTint="#00ffffff"
+            android:layout_marginTop="27dp"
+            tools:listitem="@layout/single_item_contact"
+            />
     </LinearLayout>
 
 </LinearLayout>

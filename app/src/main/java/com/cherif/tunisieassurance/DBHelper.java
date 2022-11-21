@@ -5,7 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.SyncStateContract;
 import android.widget.SimpleCursorAdapter;
+
+import java.util.ArrayList;
 
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -42,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
-        public Boolean insertData(String email, String password){
+    public Boolean insertData(String email, String password){
             SQLiteDatabase MyDB = this.getWritableDatabase();
             ContentValues contentValues= new ContentValues();
             contentValues.put("email", email);
@@ -53,7 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 return true;
         }
 
-        public Boolean checkemail(String email) {
+    public Boolean checkemail(String email) {
             SQLiteDatabase MyDB = this.getWritableDatabase();
             Cursor cursor = MyDB.rawQuery("Select * from users where email = ?", new String[]{email});
             if (cursor.getCount() > 0)
@@ -62,7 +65,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 return false;
         }
 
-        public Boolean checkemailpassword(String email, String password){
+    public Boolean checkemailpassword(String email, String password){
             SQLiteDatabase MyDB = this.getWritableDatabase();
             Cursor cursor = MyDB.rawQuery("Select * from users where email = ? and password = ?", new String[] {email,password});
             if(cursor.getCount()>0)
@@ -71,5 +74,32 @@ public class DBHelper extends SQLiteOpenHelper {
                 return false;
         }
 
+    public ArrayList<ModelClient> getAllData(){
 
+            ArrayList<ModelClient> arrayList = new ArrayList<>();
+            String selectQuery = "select * from clients";
+            SQLiteDatabase db = getReadableDatabase();
+            Cursor cursor = db.rawQuery(selectQuery,null);
+
+            if (cursor.moveToFirst()){
+                do {
+                    ModelClient modelClient = new ModelClient(
+                            ""+cursor.getInt(cursor.getColumnIndexOrThrow("idC")),
+                            ""+cursor.getString(cursor.getColumnIndexOrThrow("nameC")),
+                            ""+cursor.getString(cursor.getColumnIndexOrThrow("imageC")),
+                            ""+cursor.getString(cursor.getColumnIndexOrThrow("phoneC")),
+                            ""+cursor.getString(cursor.getColumnIndexOrThrow("regionC")),
+                            ""+cursor.getString(cursor.getColumnIndexOrThrow("emailC"))
+                    );
+
+                    arrayList.add(modelClient);
+
+
+                } while (cursor.moveToNext());
+            }
+            db.close();
+            return arrayList;
     }
+
+
+}

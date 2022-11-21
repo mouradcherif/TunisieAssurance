@@ -9,7 +9,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="249dp"
+        android:layout_height="@dimen/_250sdp"
         android:layout_above="@+id/centerinfo"
         android:layout_marginBottom="-46dp"
         android:background="@color/indigo_dye_blue">

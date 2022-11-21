@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    tools:context=".MenuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,18 +27,19 @@
                 android:layout_width="163dp"
                 android:layout_height="168dp"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@id/centerinfo"
                 app:srcCompat="@drawable/profileimage" />
 
             <LinearLayout
                 android:id="@+id/centerinfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-
                 android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:verticalScrollbarPosition="defaultPosition">
 
                 <TextView
                     android:id="@+id/textView"
@@ -74,7 +76,7 @@
                     android:layout_below="@+id/textView2"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
                     android:background="@drawable/bluebar"
                     android:onClick="GoContracts">
 
@@ -211,7 +213,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:background="@drawable/signout"
                     android:onClick="GoSignIn"
                     tools:ignore="SpeakableTextPresentCheck" />
@@ -221,15 +223,6 @@
 
 
     </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
 </LinearLayout>

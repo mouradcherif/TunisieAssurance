@@ -96,6 +96,8 @@ public class AddEditClient extends AppCompatActivity {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent,IMAGE_FROM_GALLERY_CODE);
+        grantUriPermission("com.cherif.tunisieassurance", imageUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
     }
 
     private void pickFromCamera() {
@@ -181,7 +183,6 @@ public class AddEditClient extends AppCompatActivity {
             imageUri = data.getData();
             profileImage.setImageURI(imageUri);
             image = imageUri.toString();
-
         }
     }
 

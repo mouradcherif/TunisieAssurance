@@ -24,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="163dp"
-                android:layout_height="168dp"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
                 android:layout_centerHorizontal="true"
                 app:srcCompat="@drawable/profileimage" />
 
@@ -76,7 +76,7 @@
                     android:layout_below="@+id/textView2"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:background="@drawable/bluebar"
                     android:onClick="GoContracts">
 

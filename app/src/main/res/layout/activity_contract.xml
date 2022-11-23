@@ -4,9 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity"
-    android:orientation="vertical">
+    tools:context=".ContractActivity"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundcontact">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/topArea"
+            android:layout_width="351dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:overScrollMode="always">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="131dp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Contracts"
+                android:textColor="@color/indigo_dye_blue"
+                android:textSize="150px"
+                android:textStyle="bold" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addclt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="TODO"
+                android:src="@drawable/plus"
+                app:backgroundTint="@color/indigo_dye_blue"
+                app:tint="@color/white" />
 
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_bar"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/topArea"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/grey_border_rounded_cornwe"
+            android:overScrollMode="always">
+
+            <EditText
+                android:id="@+id/username_input"
+                android:layout_width="316dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Search..."
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+
+                android:paddingTop="15dp"
+                android:textColor="@color/gris"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/username_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toLeftOf="@id/username_input"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/icon_search" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lvcontract"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search_bar"
+            android:layout_gravity="center"
+            android:background="#00ffffff"
+            android:backgroundTint="#00ffffff"
+            android:layout_marginTop="27dp"
+            tools:listitem="@layout/single_item_contact"
+            />
+    </LinearLayout>
 
 </LinearLayout>
+

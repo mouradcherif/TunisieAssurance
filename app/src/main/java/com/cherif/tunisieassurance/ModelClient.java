@@ -3,12 +3,11 @@ package com.cherif.tunisieassurance;
 
 public class ModelClient {
 
-    private String id,name,image,phone,region,email;
+    private String id,name,phone,region,email;
 
-    public ModelClient(String id, String name, String image, String phone, String region, String email) {
+    public ModelClient(String id, String name, String phone, String region, String email) {
         this.id = id;
         this.name = name;
-        this.image = image;
         this.phone = phone;
         this.region = region;
         this.email = email;
@@ -28,14 +27,6 @@ public class ModelClient {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getPhone() {

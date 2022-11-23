@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".AddEditClient"
+    tools:context=".AddEditContract"
     android:background="@drawable/backgroundwhite">
 
     <FrameLayout
@@ -26,7 +26,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/layname"
+            android:id="@+id/layref"
             android:layout_width="374dp"
             android:layout_height="wrap_content"
             android:layout_above="@id/layemail"
@@ -38,7 +38,122 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:fontFamily="@font/bahnschrift"
-                android:text="Name"
+                android:text="Reference"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/refEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/black"
+                app:backgroundTint="@color/gris"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/laydatedebut"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/laylocation"
+            android:layout_gravity="center"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:inputType="textEmailAddress"
+                android:text="Date Début"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/datedebutEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="date"
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/black"
+                app:backgroundTint="@color/gris"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/laydatefin"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layphone"
+            android:layout_gravity="center"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:text="Date Fin"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/datefinEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="date"
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/black"
+                app:backgroundTint="@color/gris"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layredevence"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layedit"
+            android:layout_gravity="center"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:inputType="phone"
+                android:text="Redevence"
+                android:textColor="@color/gris"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/redevenceEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_10sdp"
+                android:textColorHint="@color/black"
+                app:backgroundTint="@color/gris"></EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layname"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/layedit"
+            android:layout_gravity="center"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:inputType="textPersonName"
+                android:text="Client"
                 android:textColor="@color/gris"
                 android:textSize="12sp"></TextView>
 
@@ -54,64 +169,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/layemail"
-            android:layout_width="374dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/laylocation"
-            android:layout_gravity="center"
-            android:paddingTop="15dp">
-
-            <TextView
-                android:layout_width="101dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:fontFamily="@font/bahnschrift"
-                android:inputType="textEmailAddress"
-                android:text="Email"
-                android:textColor="@color/gris"
-                android:textSize="12sp"></TextView>
-
-            <EditText
-                android:id="@+id/emailEt"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:inputType="textPersonName"
-                android:padding="@dimen/_10sdp"
-                android:textColorHint="@color/black"
-                app:backgroundTint="@color/gris"></EditText>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/laylocation"
-            android:layout_width="374dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/layphone"
-            android:layout_gravity="center"
-            android:paddingTop="15dp">
-
-            <TextView
-                android:layout_width="101dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:fontFamily="@font/bahnschrift"
-                android:text="Location"
-                android:textColor="@color/gris"
-                android:textSize="12sp"></TextView>
-
-            <EditText
-                android:id="@+id/locationEt"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:inputType="text"
-                android:padding="@dimen/_10sdp"
-                android:textColorHint="@color/black"
-                app:backgroundTint="@color/gris"></EditText>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layphone"
+            android:id="@+id/layregion"
             android:layout_width="374dp"
             android:layout_height="wrap_content"
             android:layout_above="@id/layedit"
@@ -123,17 +181,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:fontFamily="@font/bahnschrift"
-                android:inputType="phone"
-                android:text="Phone number"
+                android:inputType="textPersonName"
+                android:text="Adress Client"
                 android:textColor="@color/gris"
                 android:textSize="12sp"></TextView>
 
             <EditText
-                android:id="@+id/phoneEt"
+                android:id="@+id/regionEt"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:inputType="phone"
+                android:inputType="text"
                 android:padding="@dimen/_10sdp"
                 android:textColorHint="@color/black"
                 app:backgroundTint="@color/gris"></EditText>
@@ -151,7 +209,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/bluebar"
                 android:fadeScrollbars="false"
-                android:onClick="AddEditClient"
+                android:onClick="AddEditContract"
                 android:overScrollMode="always"
                 android:paddingTop="15dp" />
 
@@ -161,7 +219,7 @@
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/bahnschrift"
                 android:gravity="center"
-                android:text="Edit Client"
+                android:text="SAVE"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"></TextView>

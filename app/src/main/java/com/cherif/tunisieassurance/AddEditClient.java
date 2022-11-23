@@ -28,18 +28,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddEditClient extends AppCompatActivity {
 
-    private ImageView profileImage;
+//    private ImageView profileImage;
     private EditText nameEt,phoneEt,emailEt,regionEt;
-    ActionBar actionBar;
-    private static final int CAMERA_PERMISSION_CODE = 100;
-    private static final int STORAGE_PERMISSION_CODE = 200;
-    private static final int IMAGE_FROM_GALLERY_CODE = 300;
-    private static final int IMAGE_FROM_CAMERA_CODE = 100;
-    private String[] cameraPermission;
-    private String[] storagePermission;
-    Uri imageUri;
+//    private static final int CAMERA_PERMISSION_CODE = 100;
+//    private static final int STORAGE_PERMISSION_CODE = 200;
+//    private static final int IMAGE_FROM_GALLERY_CODE = 300;
+//    private static final int IMAGE_FROM_CAMERA_CODE = 100;
+//    private String[] cameraPermission;
+//    private String[] storagePermission;
+//    Uri imageUri;
     DBHelper db;
-    String image;
+//    String image;
 
 
 
@@ -49,140 +48,105 @@ public class AddEditClient extends AppCompatActivity {
         setContentView(R.layout.activity_add_edit_client);
         db=new DBHelper(this);
 
-        cameraPermission = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        storagePermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("Add Contact");
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+//        cameraPermission = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        storagePermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
         nameEt = (EditText) findViewById(R.id.nameEt);
         phoneEt = (EditText) findViewById(R.id.phoneEt);
         emailEt = (EditText) findViewById(R.id.emailEt);
         regionEt = (EditText) findViewById(R.id.locationEt);
-        profileImage = findViewById(R.id.profile_image);
+//        profileImage = findViewById(R.id.profile_image);
 
 
 
 
 
-        profileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showImagePickerDialog();
-            }
-        });
+//        profileImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showImagePickerDialog();
+//            }
+//        });
     }
 
     private void showImagePickerDialog() {
-        String options[] = {"Gallery"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose an option");
-        builder.setItems(options, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int which) {
-                if (which == 0){
-                    if (!checkStoragePermission()){
-                        requestStoragePermission();
-                    }else {
-                        pickFromGallery();
-                    }
-                }
-            }
-        }).create().show();
+//        String options[] = {"Gallery"};
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Choose an option");
+//        builder.setItems(options, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int which) {
+//                if (which == 0){
+//                    if (!checkStoragePermission()){
+//                        requestStoragePermission();
+//                    }else {
+//                        pickFromGallery();
+//                    }
+//                }
+//            }
+//        }).create().show();
     }
 
     private void pickFromGallery() {
 
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
-        galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent,IMAGE_FROM_GALLERY_CODE);
-        grantUriPermission("com.cherif.tunisieassurance", imageUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+//        galleryIntent.setType("image/*");
+//        startActivityForResult(galleryIntent,IMAGE_FROM_GALLERY_CODE);
+//        grantUriPermission("com.cherif.tunisieassurance", imageUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
     }
 
     private void pickFromCamera() {
 
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.Media.TITLE,"IMAGE_TITLE");
-        values.put(MediaStore.Images.Media.DESCRIPTION,"IMAGE_DETAIL");
-
-        imageUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values);
-        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
-
-        startActivityForResult(cameraIntent,IMAGE_FROM_CAMERA_CODE);
+//        ContentValues values = new ContentValues();
+//        values.put(MediaStore.Images.Media.TITLE,"IMAGE_TITLE");
+//        values.put(MediaStore.Images.Media.DESCRIPTION,"IMAGE_DETAIL");
+//
+//        imageUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values);
+//        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+//
+//        startActivityForResult(cameraIntent,IMAGE_FROM_CAMERA_CODE);
     }
 
 
 
 
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
-    }
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        onBackPressed();
+//        return super.onSupportNavigateUp();
+//    }
 
-    private boolean checkCameraPermission(){
-        boolean result = ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
-        boolean result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
-        return result & result1;
-    }
+//    private boolean checkCameraPermission(){
+////        boolean result = ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
+////        boolean result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+////        return result & result1;
+//    }
 
-    private void requestCameraPermission(){
-        ActivityCompat.requestPermissions(this,cameraPermission,CAMERA_PERMISSION_CODE);
-    }
+//    private void requestCameraPermission(){
+////        ActivityCompat.requestPermissions(this,cameraPermission,CAMERA_PERMISSION_CODE);
+//    }
 
-    private boolean checkStoragePermission(){
-        boolean result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
-        return  result1;
-    }
+//    private boolean checkStoragePermission(){
+////        boolean result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+////        return  result1;
+//    }
 
     private void requestStoragePermission(){
-        ActivityCompat.requestPermissions(this,storagePermission,CAMERA_PERMISSION_CODE);
+//        ActivityCompat.requestPermissions(this,storagePermission,CAMERA_PERMISSION_CODE);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode){
-            case CAMERA_PERMISSION_CODE:
-                if (grantResults.length>0){
 
-                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-
-                    if (cameraAccepted && storageAccepted){
-                        pickFromCamera();
-                    }else {
-                        Toast.makeText(getApplicationContext(),"Camera & Storage Permission needed...", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                break;
-
-            case STORAGE_PERMISSION_CODE:
-                if (grantResults.length>0){
-
-
-                    boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-
-                    if (storageAccepted){
-                        pickFromGallery();
-                    }else {
-                        Toast.makeText(getApplicationContext(),"Storage Permission needed...", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                break;
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK){
-            imageUri = data.getData();
-            profileImage.setImageURI(imageUri);
-            image = imageUri.toString();
+//            imageUri = data.getData();
+//            profileImage.setImageURI(imageUri);
+//            image = imageUri.toString();
         }
     }
 
@@ -196,7 +160,7 @@ public class AddEditClient extends AppCompatActivity {
         if (nameEt.equals("")||emailEt.equals(""))
             Toast.makeText(AddEditClient.this, "Please enter all field information!",Toast.LENGTH_SHORT).show();
         else {
-            Boolean insert = db.insertDataClient(image, nameC, phoneC, emailC, regionC);
+            Boolean insert = db.insertDataClient(nameC, phoneC, emailC, regionC);
             if (insert){
                 Toast.makeText(AddEditClient.this,"Client Registered successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new  Intent(getBaseContext(), ClientActivity.class);

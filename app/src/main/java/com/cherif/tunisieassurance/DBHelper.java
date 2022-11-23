@@ -8,7 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.SyncStateContract;
 import android.widget.SimpleCursorAdapter;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -20,7 +22,8 @@ public class DBHelper extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase MyDB) {
             MyDB.execSQL("create Table users(email TEXT primary key, password TEXT)");
-            MyDB.execSQL("create Table clients(idC integer primary key AUTOINCREMENT,imageC TEXT,nameC TEXT,phoneC TEXT ,emailC TEXT ,regionC TEXT);");
+            MyDB.execSQL("create Table clients(idC integer primary key AUTOINCREMENT,nameC TEXT,phoneC TEXT ,emailC TEXT ,regionC TEXT);");
+            MyDB.execSQL("create Table contracts(idCr integer primary key AUTOINCREMENT,refCr TEXT,datedebut TEXT ,datefin TEXT ,redevence TEXT);");
         }
 
         @Override
@@ -28,13 +31,25 @@ public class DBHelper extends SQLiteOpenHelper {
 
             MyDB.execSQL("drop Table if exists users");
             MyDB.execSQL("drop Table if exists clients");
+            MyDB.execSQL("drop Table if exists contracts");
         }
 
-
-    public Boolean insertDataClient(String imageC, String nameC,String phoneC,String emailC, String regionC){
+    public Boolean insertDataContract(String refCr, String datedebut, String datefin, String redevence){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues1= new ContentValues();
-        contentValues1.put("imageC", imageC);
+        contentValues1.put("refCr", refCr);
+        contentValues1.put("datedebut", datedebut);
+        contentValues1.put("datefin", datefin);
+        contentValues1.put("redevence", redevence);
+        long result = MyDB.insert("contracts", null, contentValues1);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean insertDataClient(String nameC, String phoneC, String emailC, String regionC){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues1= new ContentValues();
         contentValues1.put("nameC", nameC);
         contentValues1.put("emailC", emailC);
         contentValues1.put("regionC", regionC);
@@ -86,7 +101,6 @@ public class DBHelper extends SQLiteOpenHelper {
                     ModelClient modelClient = new ModelClient(
                             ""+cursor.getInt(cursor.getColumnIndexOrThrow("idC")),
                             ""+cursor.getString(cursor.getColumnIndexOrThrow("nameC")),
-                            ""+cursor.getString(cursor.getColumnIndexOrThrow("imageC")),
                             ""+cursor.getString(cursor.getColumnIndexOrThrow("phoneC")),
                             ""+cursor.getString(cursor.getColumnIndexOrThrow("regionC")),
                             ""+cursor.getString(cursor.getColumnIndexOrThrow("emailC"))
@@ -99,6 +113,32 @@ public class DBHelper extends SQLiteOpenHelper {
             }
             db.close();
             return arrayList;
+    }
+
+    public ArrayList<ModelContract> getAllDataContract(){
+
+        ArrayList<ModelContract> arrayList = new ArrayList<>();
+        String selectQuery = "select * from contracts";
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                ModelContract modelContract = new ModelContract(
+                        ""+cursor.getInt(cursor.getColumnIndexOrThrow("idCr")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("refCr")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("datedebut")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("datefin")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("redevence"))
+                );
+
+                arrayList.add(modelContract);
+
+
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        return arrayList;
     }
 
 

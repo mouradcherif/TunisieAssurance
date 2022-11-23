@@ -1,23 +1,16 @@
 package com.cherif.tunisieassurance;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ClientViewHolder>{
 
@@ -42,17 +35,11 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ClientVi
 
         ModelClient modelClient = clientList.get(position);
         String id = modelClient.getId();
-        String image = modelClient.getImage();
         String name = modelClient.getName();
         String region = modelClient.getRegion();
 
 
         holder.clientName.setText(name);
-        if (image.equals("")){
-            holder.clientImage.setImageResource(R.drawable.avatar);
-        }else {
-            holder.clientImage.setImageURI(Uri.parse(image));
-        }
         holder.clientRegion.setText(region);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

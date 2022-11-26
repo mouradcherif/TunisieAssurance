@@ -1,6 +1,7 @@
 package com.cherif.tunisieassurance;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class AdapterContract extends RecyclerView.Adapter<AdapterContract.Contra
         String ref = modelContract.getRef();
         String datedebut = modelContract.getDatedebut();
         String datefin = modelContract.getDatefin();
+        String redevence = modelContract.getRedevence();
 
 
         holder.contractRef.setText(ref);
@@ -46,7 +48,16 @@ public class AdapterContract extends RecyclerView.Adapter<AdapterContract.Contra
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(context,AddEditClient.class);
+                intent.putExtra("id", id);
+                intent.putExtra("ref", ref);
+                intent.putExtra("datedebut", datedebut);
+                intent.putExtra("datefin",datefin);
+                intent.putExtra("redevence",redevence);
 
+                intent.putExtra("isEditMode",true);
+
+                context.startActivity(intent);
             }
         });
 

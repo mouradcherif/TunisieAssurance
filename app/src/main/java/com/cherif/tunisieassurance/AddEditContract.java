@@ -29,7 +29,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class AddEditContract extends AppCompatActivity {
 
     private EditText refEt,datedebutEt,datefinEt,redevenceEt,nameEt,regionEt;
+    String id , ref ,datedebut, datefin, redevence;
     DBHelper db;
+    private boolean isEditMode;
 
 
 
@@ -44,6 +46,23 @@ public class AddEditContract extends AppCompatActivity {
         datedebutEt = (EditText) findViewById(R.id.datedebutEt);
         datefinEt = (EditText) findViewById(R.id.datefinEt);
         redevenceEt = (EditText) findViewById(R.id.redevenceEt);
+
+
+        Intent intent = getIntent();
+        isEditMode = intent.getBooleanExtra("isEditMode", false);
+
+        if (isEditMode){
+            id = intent.getStringExtra("id");
+            ref = intent.getStringExtra("ref");
+            datedebut = intent.getStringExtra("datedebut");
+            datefin = intent.getStringExtra("datefin");
+            redevence = intent.getStringExtra("redevence");
+
+            refEt.setText(ref);
+            datedebutEt.setText(datedebut);
+            datefinEt.setText(datefin);
+            redevenceEt.setText(redevence);
+        }
 
     }
 

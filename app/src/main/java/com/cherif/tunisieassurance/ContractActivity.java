@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ContractActivity extends AppCompatActivity {
 
-    private FloatingActionButton fab;
+    private FloatingActionButton fab,fab1;
     private RecyclerView contractRV;
     private DBHelper dbHelper;
     private AdapterContract adapterContract;
@@ -29,6 +29,7 @@ public class ContractActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
 
         fab = findViewById(R.id.addclt);
+        fab1 = findViewById(R.id.addclt2);
         contractRV = findViewById(R.id.lvcontract);
         contractRV.setHasFixedSize(true);
 
@@ -37,6 +38,14 @@ public class ContractActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ContractActivity.this,AddEditContract.class);
+                startActivity(intent);
+            }
+        });
+
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ContractActivity.this,MenuActivity.class);
                 startActivity(intent);
             }
         });

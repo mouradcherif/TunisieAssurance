@@ -1,6 +1,7 @@
 package com.cherif.tunisieassurance;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,9 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ClientVi
         String id = modelClient.getId();
         String name = modelClient.getName();
         String region = modelClient.getRegion();
+        String phone = modelClient.getPhone();
+        String email = modelClient.getEmail();
+
 
 
         holder.clientName.setText(name);
@@ -44,7 +48,16 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ClientVi
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(context,AddEditClient.class);
+                intent.putExtra("id", id);
+                intent.putExtra("name", name);
+                intent.putExtra("region", region);
+                intent.putExtra("phone",phone);
+                intent.putExtra("email",email);
 
+                intent.putExtra("isEditMode",true);
+
+                context.startActivity(intent);
             }
         });
 

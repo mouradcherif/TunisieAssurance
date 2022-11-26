@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ClientActivity extends AppCompatActivity {
 
-    private FloatingActionButton fab;
+    private FloatingActionButton fab,fab1;
     private RecyclerView contactRV;
 
     private DBHelper dbHelper;
@@ -27,19 +27,24 @@ public class ClientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
-
         dbHelper = new DBHelper(this);
 
         fab = findViewById(R.id.addclt);
+        fab1 = findViewById(R.id.addclt2);
         contactRV = findViewById(R.id.lvcontact);
-
         contactRV.setHasFixedSize(true);
-
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ClientActivity.this,AddEditClient.class);
+                startActivity(intent);
+            }
+        });
+
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ClientActivity.this,MenuActivity.class);
                 startActivity(intent);
             }
         });

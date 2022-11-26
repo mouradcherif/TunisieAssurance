@@ -141,5 +141,67 @@ public class DBHelper extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    public void updateClient(String idC,String nameC, String phoneC, String emailC, String regionC){
+
+        //get writable database to write data on db
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // create ContentValue class object to save data
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("nameC", nameC);
+        contentValues.put("emailC", emailC);
+        contentValues.put("regionC", regionC);
+        contentValues.put("phoneC", phoneC);
+
+        //update data in row, It will return id of record
+        db.update("clients",contentValues,"idC"+"=? ",new String[]{idC} );
+
+        // close db
+        db.close();
+
+    }
+
+    public void updateContract(String idCr,String refCr, String datedebut, String datefin, String redevence){
+
+        //get writable database to write data on db
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // create ContentValue class object to save data
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("refCr", refCr);
+        contentValues.put("datedebut", datedebut);
+        contentValues.put("datefin", datefin);
+        contentValues.put("redevence", redevence);
+
+        //update data in row, It will return id of record
+        db.update("clients",contentValues,"idC"+"=? ",new String[]{idCr} );
+
+        // close db
+        db.close();
+
+    }
+
+    public void deleteClient(String id){
+        //get writable database
+        SQLiteDatabase db =  getWritableDatabase();
+
+        //delete query
+        db.delete("clients","WHERE"+" =? ",new String[]{id});
+
+        db.close();
+    }
+
+    public void deleteContract(String id){
+        //get writable database
+        SQLiteDatabase db =  getWritableDatabase();
+
+        //delete query
+        db.delete("contracts","WHERE"+" =? ",new String[]{id});
+
+        db.close();
+    }
+
 
 }

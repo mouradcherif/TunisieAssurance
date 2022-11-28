@@ -108,6 +108,10 @@
             android:layout_marginTop="27dp"
             tools:listitem="@layout/single_item_contact"
             />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </LinearLayout>

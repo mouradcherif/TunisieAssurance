@@ -95,4 +95,12 @@ public class AddEditClient extends AppCompatActivity {
         }
 
     }
+
+    public void DeleteClient(View view) {
+        if (isEditMode){
+            db.deleteClient(id);
+            Intent intent = new  Intent(getBaseContext(), ClientActivity.class);
+            startActivity(intent);
+        }
+    }
 }

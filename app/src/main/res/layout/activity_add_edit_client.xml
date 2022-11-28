@@ -168,5 +168,22 @@
 
         </RelativeLayout>
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DeleteClient"
+            android:layout_marginStart="157dp"
+            android:layout_marginBottom="61dp"
+            android:scrollbarThumbHorizontal="@color/design_default_color_error"
+            android:scrollbarThumbVertical="@color/design_default_color_error"
+            android:shadowColor="#BCA8A8"
+            android:text="DELETE"
+            android:textColor="#FF0000"
+            android:textColorHighlight="#FF0000"
+            android:textColorHint="#FF0000"
+            android:textColorLink="#FF0000" />
+
     </LinearLayout>
+
 </RelativeLayout>

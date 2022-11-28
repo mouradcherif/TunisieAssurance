@@ -178,7 +178,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void deleteClient(String id){
         SQLiteDatabase db =  getWritableDatabase();
 
-        db.delete("clients","WHERE"+" =? ",new String[]{id});
+        db.delete("clients","idC"+" =? ",new String[]{id});
 
         db.close();
     }
@@ -186,7 +186,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void deleteContract(String id){
         SQLiteDatabase db =  getWritableDatabase();
 
-        db.delete("contracts","WHERE"+" =? ",new String[]{id});
+        db.delete("contracts","idCr"+" =? ",new String[]{id});
 
         db.close();
     }

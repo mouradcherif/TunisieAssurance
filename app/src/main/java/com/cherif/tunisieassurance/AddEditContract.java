@@ -96,4 +96,12 @@ public class AddEditContract extends AppCompatActivity {
         }
 
     }
+
+    public void DeleteContract(View view) {
+        if (isEditMode){
+            db.deleteContract(id);
+            Intent intent = new  Intent(getBaseContext(), ContractActivity.class);
+            startActivity(intent);
+        }
+    }
 }

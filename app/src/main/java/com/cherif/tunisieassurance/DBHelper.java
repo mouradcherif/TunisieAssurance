@@ -191,5 +191,66 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public ArrayList<ModelClient> getSearchContact(String query){
+
+        // it will return arraylist of modelContact class
+        ArrayList<ModelClient> contactList = new ArrayList<>();
+
+        // get readable database
+        SQLiteDatabase db = getReadableDatabase();
+
+        //query for search
+        String queryToSearch = "SELECT * FROM "+"clients"+" WHERE "+"nameC" + " LIKE '%" +query+"%'";
+
+        Cursor cursor = db.rawQuery(queryToSearch,null);
+
+        // looping through all record and add to list
+        if (cursor.moveToFirst()){
+            do {
+                ModelClient modelContact = new ModelClient(
+                        // only id is integer type
+                        ""+cursor.getInt(cursor.getColumnIndexOrThrow("idC")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("nameC")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("phoneC")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("regionC")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("emailC"))
+                );
+                contactList.add(modelContact);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return contactList;
+
+    }
+
+    public ArrayList<ModelContract> getSearchContract(String query){
+
+        ArrayList<ModelContract> contractList = new ArrayList<>();
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String queryToSearch = "SELECT * FROM "+"contracts"+" WHERE "+"refCr" + " LIKE '%" +query+"%'";
+
+        Cursor cursor = db.rawQuery(queryToSearch,null);
+
+
+        if (cursor.moveToFirst()){
+            do {
+                ModelContract modelContract = new ModelContract(
+
+                        ""+cursor.getInt(cursor.getColumnIndexOrThrow("idCr")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("refCr")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("datedebut")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("datefin")),
+                        ""+cursor.getString(cursor.getColumnIndexOrThrow("redevence"))
+                );
+                contractList.add(modelContract);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return contractList;
+
+    }
+
 
 }

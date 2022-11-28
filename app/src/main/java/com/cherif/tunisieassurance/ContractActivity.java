@@ -1,6 +1,7 @@
 package com.cherif.tunisieassurance;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +21,7 @@ public class ContractActivity extends AppCompatActivity {
     private RecyclerView contractRV;
     private DBHelper dbHelper;
     private AdapterContract adapterContract;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,24 @@ public class ContractActivity extends AppCompatActivity {
             }
         });
 
+        searchView = findViewById(R.id.search_bar);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchContract(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchContract(newText);
+                return true;
+            }
+
+
+        });
+
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +71,10 @@ public class ContractActivity extends AppCompatActivity {
         });
 
         loadData();
+    }
+    private void searchContract(String query) {
+        adapterContract = new AdapterContract(this,dbHelper.getSearchContract(query));
+        contractRV.setAdapter(adapterContract);
     }
 
     private void loadData() {

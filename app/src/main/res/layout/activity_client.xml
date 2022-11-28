@@ -58,7 +58,7 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/search_bar"
             android:layout_width="360dp"
             android:layout_height="55dp"
@@ -66,36 +66,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/grey_border_rounded_cornwe"
-            android:overScrollMode="always">
+            android:overScrollMode="always"
+            app:queryHint="Search here ..."
+            app:iconifiedByDefault="false">
 
-            <EditText
-                android:id="@+id/username_input"
-                android:layout_width="316dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="Search..."
-                android:inputType="textPersonName"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:paddingLeft="20dp"
-
-                android:paddingTop="15dp"
-                android:textColor="@color/gris"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:textSize="17sp" />
-
-            <ImageView
-                android:id="@+id/username_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_alignParentEnd="true"
-                android:layout_toLeftOf="@id/username_input"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginEnd="6dp"
-                android:src="@drawable/icon_search" />
-
-        </RelativeLayout>
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lvcontact"

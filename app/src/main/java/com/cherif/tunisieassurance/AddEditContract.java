@@ -77,15 +77,22 @@ public class AddEditContract extends AppCompatActivity {
         if (refEt.equals("")||datedebutEt.equals("")||datefinEt.equals("")||redevenceEt.equals(""))
             Toast.makeText(AddEditContract.this, "Please enter all field information!",Toast.LENGTH_SHORT).show();
         else {
-            Boolean insert = db.insertDataContract(refc, datedebutc, datefinc, redevencec);
-            if (insert){
-                Toast.makeText(AddEditContract.this,"Contract Registered successfully", Toast.LENGTH_SHORT).show();
+            if (isEditMode){
+                db.updateContract(id,refc,datedebutc,datefinc,redevencec);
                 Intent intent = new  Intent(getBaseContext(), ContractActivity.class);
                 startActivity(intent);
+            }else{
+                Boolean insert = db.insertDataContract(refc, datedebutc, datefinc, redevencec);
+                if (insert){
+                    Toast.makeText(AddEditContract.this,"Contract Registered successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new  Intent(getBaseContext(), ContractActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(AddEditContract.this,"Contract Registration Failed", Toast.LENGTH_SHORT).show();
+                }
             }
-            else {
-                Toast.makeText(AddEditContract.this,"Contract Registration Failed", Toast.LENGTH_SHORT).show();
-            }
+
         }
 
     }

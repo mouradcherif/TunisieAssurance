@@ -45,20 +45,17 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ClientVi
 
         holder.clientName.setText(name);
         holder.clientRegion.setText(region);
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context,AddEditClient.class);
-                intent.putExtra("id", id);
-                intent.putExtra("name", name);
-                intent.putExtra("region", region);
-                intent.putExtra("phone",phone);
-                intent.putExtra("email",email);
+        holder.cardView.setOnClickListener(view -> {
+            Intent intent = new Intent(context,AddEditClient.class);
+            intent.putExtra("id", id);
+            intent.putExtra("name", name);
+            intent.putExtra("region", region);
+            intent.putExtra("phone",phone);
+            intent.putExtra("email",email);
 
-                intent.putExtra("isEditMode",true);
+            intent.putExtra("isEditMode",true);
 
-                context.startActivity(intent);
-            }
+            context.startActivity(intent);
         });
 
     }

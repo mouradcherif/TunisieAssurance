@@ -45,20 +45,17 @@ public class AdapterContract extends RecyclerView.Adapter<AdapterContract.Contra
         holder.contractRef.setText(ref);
         holder.contractDatedebut.setText(datedebut);
         holder.contractDatefin.setText(datefin);
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context,AddEditClient.class);
-                intent.putExtra("id", id);
-                intent.putExtra("ref", ref);
-                intent.putExtra("datedebut", datedebut);
-                intent.putExtra("datefin",datefin);
-                intent.putExtra("redevence",redevence);
+        holder.cardView.setOnClickListener(view -> {
+            Intent intent = new Intent(context,AddEditContract.class);
+            intent.putExtra("id", id);
+            intent.putExtra("ref", ref);
+            intent.putExtra("datedebut", datedebut);
+            intent.putExtra("datefin",datefin);
+            intent.putExtra("redevence",redevence);
 
-                intent.putExtra("isEditMode",true);
+            intent.putExtra("isEditMode",true);
 
-                context.startActivity(intent);
-            }
+            context.startActivity(intent);
         });
 
     }

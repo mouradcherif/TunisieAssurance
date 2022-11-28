@@ -52,12 +52,14 @@ public class AddEditClient extends AppCompatActivity {
             id = intent.getStringExtra("id");
             name = intent.getStringExtra("name");
             phone = intent.getStringExtra("phone");
-            email = intent.getStringExtra("region");
+            email = intent.getStringExtra("email");
+            region = intent.getStringExtra("region");
 
             nameEt.setText(name);
             phoneEt.setText(phone);
             emailEt.setText(email);
             regionEt.setText(region);
+
         }
 
     }
@@ -73,15 +75,23 @@ public class AddEditClient extends AppCompatActivity {
         if (nameEt.equals("")||emailEt.equals(""))
             Toast.makeText(AddEditClient.this, "Please enter all field information!",Toast.LENGTH_SHORT).show();
         else {
-            Boolean insert = db.insertDataClient(nameC, phoneC, emailC, regionC);
-            if (insert){
-                Toast.makeText(AddEditClient.this,"Client Registered successfully", Toast.LENGTH_SHORT).show();
+            if (isEditMode){
+                db.updateClient(id,nameC,phoneC,emailC,regionC);
                 Intent intent = new  Intent(getBaseContext(), ClientActivity.class);
                 startActivity(intent);
+            }else {
+                Boolean insert = db.insertDataClient(nameC, phoneC, emailC, regionC);
+
+                if (insert){
+                    Toast.makeText(AddEditClient.this,"Client Registered successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new  Intent(getBaseContext(), ClientActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(AddEditClient.this,"Client Registration Failed", Toast.LENGTH_SHORT).show();
+                }
             }
-            else {
-                Toast.makeText(AddEditClient.this,"Client Registration Failed", Toast.LENGTH_SHORT).show();
-            }
+
         }
 
     }

@@ -6,8 +6,6 @@
 
 <h4 align="center">A small project for contracts and clients management.</h4>
 
-
-![screenshot](./img/intro.gif | width=100)
 <img src="./img/intro.gif" width="200">
 <img src="./img/login.png" width="200">
 <img src="./img/dashboard.png" width="200">

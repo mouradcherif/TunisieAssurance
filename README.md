@@ -6,7 +6,7 @@
 
 <h4 align="center">A small project for contracts and clients management.</h4>
 
-<img src="./img/login.png" alt="drawing" width="200"/>
+
 ![screenshot](./img/intro.gif)
 ![screenshot](./img/login.png)
 ![screenshot](./img/dashboard.png)

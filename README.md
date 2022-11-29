@@ -6,11 +6,11 @@
 
 <h4 align="center">A small project for contracts and clients management.</h4>
 
-![screenshot](https://github.com/mouradcherif/TunisieAssurance/master/img/intro.gif)
-![screenshot](https://github.com/mouradcherif/TunisieAssurance/master/img/login.png)
-![screenshot](https://github.com/mouradcherif/TunisieAssurance/master/img/dashboard.png)
-![screenshot](https://github.com/mouradcherif/TunisieAssurance/master/img/clientlist.png)
-![screenshot](https://github.com/mouradcherif/TunisieAssurance/master/img/mod-remove-client.png)
+![screenshot](./img/intro.gif)
+![screenshot](./img/login.png)
+![screenshot](./img/dashboard.png)
+![screenshot](./img/clientlist.png)
+![screenshot](./img/mod-remove-client.png)
 
 ## Key Features
 

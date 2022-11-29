@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +32,7 @@ public class AddEditClient extends AppCompatActivity {
     private EditText nameEt,phoneEt,emailEt,regionEt;
     private String id,name,phone,email,region;
     private Boolean isEditMode;
+    private RelativeLayout laydelete;
     DBHelper db;
 
 
@@ -44,6 +46,7 @@ public class AddEditClient extends AppCompatActivity {
         phoneEt =  findViewById(R.id.phoneEt);
         emailEt =  findViewById(R.id.emailEt);
         regionEt =  findViewById(R.id.locationEt);
+        laydelete = (RelativeLayout) findViewById(R.id.laydelete);
 
         Intent intent = getIntent();
         isEditMode = intent.getBooleanExtra("isEditMode", false);
@@ -60,6 +63,8 @@ public class AddEditClient extends AppCompatActivity {
             emailEt.setText(email);
             regionEt.setText(region);
 
+        }else {
+            laydelete.setVisibility(View.INVISIBLE);
         }
 
     }

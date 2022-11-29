@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +30,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class AddEditContract extends AppCompatActivity {
 
     private EditText refEt,datedebutEt,datefinEt,redevenceEt,nameEt,regionEt;
-    String id , ref ,datedebut, datefin, redevence;
+    private RelativeLayout laydelete;
+    private String id , ref ,datedebut, datefin, redevence;
     DBHelper db;
     private boolean isEditMode;
 
@@ -46,6 +48,7 @@ public class AddEditContract extends AppCompatActivity {
         datedebutEt = (EditText) findViewById(R.id.datedebutEt);
         datefinEt = (EditText) findViewById(R.id.datefinEt);
         redevenceEt = (EditText) findViewById(R.id.redevenceEt);
+        laydelete = (RelativeLayout) findViewById(R.id.laydelete);
 
 
         Intent intent = getIntent();
@@ -62,6 +65,8 @@ public class AddEditContract extends AppCompatActivity {
             datedebutEt.setText(datedebut);
             datefinEt.setText(datefin);
             redevenceEt.setText(redevence);
+        }else{
+            laydelete.setVisibility(View.INVISIBLE);
         }
 
     }

@@ -37,11 +37,12 @@
                 android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
+                android:gravity="center"
                 android:layout_alignParentTop="true"
                 android:fontFamily="@font/bahnschrift"
                 android:text="Contracts"
                 android:textColor="@color/indigo_dye_blue"
-                android:textSize="110px"
+                android:textSize="150px"
                 android:textStyle="bold" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -192,23 +192,19 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<ModelClient> getSearchContact(String query){
-
-        // it will return arraylist of modelContact class
+            
         ArrayList<ModelClient> contactList = new ArrayList<>();
 
-        // get readable database
         SQLiteDatabase db = getReadableDatabase();
 
-        //query for search
         String queryToSearch = "SELECT * FROM "+"clients"+" WHERE "+"nameC" + " LIKE '%" +query+"%'";
 
         Cursor cursor = db.rawQuery(queryToSearch,null);
 
-        // looping through all record and add to list
         if (cursor.moveToFirst()){
             do {
                 ModelClient modelContact = new ModelClient(
-                        // only id is integer type
+
                         ""+cursor.getInt(cursor.getColumnIndexOrThrow("idC")),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow("nameC")),
                         ""+cursor.getString(cursor.getColumnIndexOrThrow("phoneC")),

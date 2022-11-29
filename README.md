@@ -8,7 +8,7 @@
 
 
 ![screenshot](./img/intro.gif | width=100)
-![screenshot](./img/login.png | width=100)
+<img src="./img/login.png" width="100">
 ![screenshot](./img/dashboard.png | width=100)
 ![screenshot](./img/clientlist.png | width=100)
 ![screenshot](./img/mod-remove-client.png | width=100)

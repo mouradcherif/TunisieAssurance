@@ -6,11 +6,11 @@
 
 <h4 align="center">A small project for contracts and clients management.</h4>
 
-<img src="./img/intro.gif" width="200">
-<img src="./img/login.png" width="200">
-<img src="./img/dashboard.png" width="200">
-<img src="./img/clientlist.png" width="200">
-<img src="./img/mod-remove-client.png" width="200">
+<img src="./img/intro.gif" width="200"> <img src="./img/login.png" width="200"> <img src="./img/dashboard.png" width="200"> <img src="./img/clientlist.png" width="200"> <img src="./img/mod-remove-client.png" width="200">
+
+
+
+
 
 ## Key Features
 

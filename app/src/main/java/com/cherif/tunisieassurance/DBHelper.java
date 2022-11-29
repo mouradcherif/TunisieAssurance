@@ -192,7 +192,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<ModelClient> getSearchContact(String query){
-            
+
         ArrayList<ModelClient> contactList = new ArrayList<>();
 
         SQLiteDatabase db = getReadableDatabase();

@@ -6,6 +6,7 @@
 
 <h4 align="center">A small project for contracts and clients management.</h4>
 
+<img src="./img/login.png" alt="drawing" width="200"/>
 ![screenshot](./img/intro.gif)
 ![screenshot](./img/login.png)
 ![screenshot](./img/dashboard.png)
@@ -39,4 +40,5 @@ Apache-2.0
 ---
 
 > GitHub [@mouradcherif](https://https://github.com/mouradcherif) &nbsp;&middot;&nbsp;
+> Linkedin [Mourad Amine Cherif](https://www.linkedin.com/in/mouradacherif/) &nbsp;&middot;&nbsp;
 
